@@ -6,15 +6,15 @@ document.addEventListener('click', (evt) => {
 
   if (
     evt.target !== hamburgerBtn
-    && !menu.classList.contains('hidden')
+    && !hamburgerMenu.classList.contains('hidden')
     && evt.target !== hamburgerMenu
-    && evt.target !== menu
   ) {
-    menu.classList.toggle('hidden');
+    hamburgerMenu.classList.toggle('hidden');
   }
 
 });
 
 hamburgerBtn.onclick = function() {
-  menu.classList.toggle('hidden');
+  hamburgerMenu.classList.toggle('hidden');
+  hamburgerBtn.classList.toggle('clicked');
 }

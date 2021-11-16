@@ -33,6 +33,11 @@ button {
   border: none;
 }
 
+button.clicked,
+button:active {
+  opacity: 0.5;
+}
+
 h1,
 h2,
 h3,
@@ -98,24 +103,39 @@ header > div .logo {
   height: 100%;
   width: 100px;
 }
-header > div #hamburgerBtn {
+header > div .menu {
+  display: flex;
+}
+header > div .menu #hamburgerBtn {
   background: url("../images/icon-hamburger.svg") no-repeat center;
   background-size: contain;
-  height: 100%;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
-header > div .menu {
+header > div .menu__mobile.hidden {
+  display: none;
+}
+header > div .menu__mobile::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid white;
+  border-bottom: 10px solid white;
+  border-left: 10px solid transparent;
+}
+header > div .menu__mobile {
   background-color: white;
   color: #818498;
   position: absolute;
   top: 6em;
-  left: 1.5em;
+  right: 1.5em;
   width: calc(100% - 3em);
+  min-width: 170px;
   max-width: 400px;
   padding: 2em;
   z-index: 1;
-}
-header > div .menu__mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -443,6 +463,28 @@ footer .attribution {
   .gallery img:nth-child(4) {
     background: url("../images/desktop/image-gallery-sugar-cubes.jpg") no-repeat center;
     background-size: cover;
+  }
+}
+@media (min-width: 600px) {
+  header > div .menu #hamburgerBtn {
+    display: none;
+  }
+  header > div .menu__desktop {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+  }
+  header > div .menu__desktop a:last-child {
+    background-color: white;
+    color: #23303e;
+    font-family: "Fraunces", serif;
+    padding: 0.5em 1em;
+    border-radius: 5em;
+  }
+  header > div .menu__mobile {
+    display: none;
   }
 }
 
