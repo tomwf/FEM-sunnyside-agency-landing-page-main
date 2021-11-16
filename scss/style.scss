@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+/********** Colors-**********/
+/********** Primary-**********/
+$soft-red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$dark-desaturated-cyan-graphic-design-text: hsl(167, 40%, 24%);
+$dark-blue-photography-text: hsl(198, 62%, 26%);
+$dark-moderate-cyan-footer: hsl(168, 34%, 41%);
+/********** Neutral-**********/
+$very-dark-desaturated-blue: hsl(212, 27%, 19%);
+$very-dark-grayish-blue: hsl(213, 9%, 39%);
+$dark-grayish-blue: hsl(232, 10%, 55%);
+$grayish-blue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+  font-family: inherit;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Fraunces', serif;
+}
+
+h1 {
+  color: $white;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-top: 3em;
+}
+
+h2 {
+  color: $very-dark-desaturated-blue;
+  font-weight: 900;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1em;
+}
+
+h4 {
+  color: $grayish-blue;
+  font-weight: 900;
+  font-size: .85rem;
+  letter-spacing: 5px;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: .85rem;
+  line-height: 1.75;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  background: url('../images/mobile/image-header.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+  height: 600px;
+  padding: 2em 1.5em;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 22px;
+
+    a  {
+      display: inline-block; 
+    }
+
+    .logo {
+      background: url('../images/logo.svg') no-repeat center;
+      background-size: contain; 
+      height: 100%;
+      width: 100px;
+    }
+
+    #hamburgerBtn {
+      background: url('../images/icon-hamburger.svg') no-repeat center;
+      background-size: contain;
+      height: 100%;
+      width: 24px;
+    }
+
+    .menu {
+      background-color: $white;
+      color: $dark-grayish-blue;
+      position: absolute;
+      top: 6em;
+      left: 1.5em;
+      width: calc(100% - 3em);
+      max-width: 400px;
+      padding: 2em;
+      z-index: 1;
+
+      &__mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        & > a:last-child {
+          background-color: $yellow;
+          color: $very-dark-desaturated-blue;
+          border-radius: 5em;
+          font-family: 'Fraunces', serif;
+          padding: 1em 1.75em;
+          width: 150px;
+        }
+      }
+
+      &__desktop {
+        display: none;
+      }
+    }
+  }
+
+  & > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+  }
+}
+
+.post {
+
+  &__image {
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      width: 100%;
+      height: 300px;
+      color: transparent;
+    }
+  }
+
+  &__image:nth-child(1) {
+    img {
+      background: url('../images/mobile/image-transform.jpg') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &__image:nth-child(3) {
+    img {
+      background: url('../images/mobile/image-stand-out.jpg') no-repeat center;
+      background-size: cover;
+      display: inline-block;
+      width: 100%;
+      color: transparent;
+    }
+  }
+
+  &__text {
+    min-height: 430px;
+    padding: 3em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    p {
+      color: $dark-grayish-blue;
+    }
+
+    a {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: .85rem;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    hr {
+      width: 140px;
+      height: 10px;
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -25%);
+      background-color: $yellow;
+      border: none;
+      border-radius: 5em;
+      opacity: .2;
+      z-index: -1;
+    }
+  }
+
+  &__text:nth-child(4) {
+    hr {
+      background-color: $soft-red;
+    }
+  }
+
+  &__cover {
+    color: $dark-desaturated-cyan-graphic-design-text;
+    background: url('../images/mobile/image-graphic-design.jpg') center top/cover no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2em 1em;
+  }
+
+  &__cover:last-child {
+    color: $dark-blue-photography-text;
+    background: url('../images/mobile/image-photography.jpg') center top/cover no-repeat;
+  }
+}
+
+.testimonials {
+  padding: 3.5em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    img {
+      width: 70px;
+      border-radius: 50%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+    }
+  }
+
+  &__name {
+    font-family: 'Fraunces', serif;
+  }
+
+  &__job {
+    color: $grayish-blue;
+    font-size: .75rem;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 100vw;
+  min-height: 250px;
+  max-height: 375px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    color: transparent;
+  }
+
+  img:nth-child(1) {
+    background: url('../images/mobile/image-gallery-milkbottles.jpg') no-repeat center;
+    background-size: cover;
+  }
+
+  img:nth-child(2) {
+    background: url('../images/mobile/image-gallery-orange.jpg') no-repeat center;
+    background-size: cover;
+  }
+
+  img:nth-child(3) {
+    background: url('../images/mobile/image-gallery-cone.jpg') no-repeat center;
+    background-size: cover;
+  }
+
+  img:nth-child(4) {
+    background: url('../images/mobile/image-gallery-sugar-cubes.jpg') no-repeat center;
+    background-size: cover;
+  }
+}
+
+footer {
+  color: $dark-moderate-cyan-footer;
+  background-color: rgb(146, 212, 197);
+  padding: 3.5em 1em;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  position: relative;
+
+  & > a {
+    background: url('../images/logo-footer.svg') no-repeat center;
+    background-size: contain;
+    width: 180px;
+    height: 38px;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  & > div:not(.attribution) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & > div:nth-child(2) {
+    width: 280px;
+    margin: 0 auto;
+
+    & > a:hover {
+      color: $white;
+      transition: color .2s;
+    }
+  }
+
+  .share-icons {
+    width: 180px;
+    margin: auto auto 0 auto;
+
+    a {
+      display: inline-block;
+      height: 20px;
+      transition: filter .2s;
+    }
+
+    & > a:hover {
+      filter: brightness(6);
+    }
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+}
+
+@media (min-width: 450px) {
+
+  h2 {
+    font-size: clamp(.75rem, 1.75rem, 3vw);
+  }
+
+  h3 {
+    font-size: clamp(.75rem, 1.6rem, 3vw);
+  }
+
+  p {
+    font-size: clamp(.5rem, .85rem, 1.5vw);
+  }
+
+  header {
+    background: url('../images/desktop/image-header.jpg') no-repeat center;
+    background-size: cover;
+
+    & > img {
+      height: 80px;
+      top: 40%;
+    }
+  }
+
+  .post {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+
+    article {
+      min-height: 225px;
+      height: 50vw;
+      max-height: 500px;
+    }
+
+    &__text {
+      justify-content: space-evenly;
+      text-align: left;
+      padding-left: 10vw;
+      padding-right: 5vw;
+
+      a {
+        font-size: clamp(.5rem, .85rem, 2vw);
+      }
+
+      hr:nth-child(1) {
+        width: 18.5vw;
+        max-width: 135px;
+        left: 0;
+        transform: translateX(-7%);
+      }
+    }
+
+    &__image {
+      img {
+        height: 100%;
+      }
+    }
+
+    &__cover {
+      padding: 3vw 10vw;
+    }
+
+    &__text:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    } 
+
+    &__image:nth-child(1) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+
+      img {
+        content: url('../images/desktop/image-transform.jpg');
+      }
+    }
+
+    &__image:nth-child(3) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+
+      img {
+        content: url('../images/desktop/image-stand-out.jpg');
+      }
+    }
+
+    &__text:nth-child(4) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    } 
+
+    &__cover:nth-child(5) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      background: url('../images/desktop/image-graphic-design.jpg') no-repeat center;
+      background-size: cover;
+    } 
+
+    &__cover:nth-child(6) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      background: url('../images/desktop/image-photography.jpg') no-repeat center;
+      background-size: cover;
+    } 
+  }
+
+  .testimonials {
+    padding: 5em 3em;
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+    }
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: initial;
+    min-height: initial;
+    height: 30vw;
+    max-height: 300px;
+
+    img:nth-child(1) {
+      background: url('../images/desktop/image-gallery-milkbottles.jpg') no-repeat center;
+      background-size: cover;
+    }
+
+    img:nth-child(2) {
+      background: url('../images/desktop/image-gallery-orange.jpg') no-repeat center;
+      background-size: cover;
+    }
+
+    img:nth-child(3) {
+      background: url('../images/desktop/image-gallery-cone.jpg') no-repeat center;
+      background-size: cover;
+    }
+
+    img:nth-child(4) {
+      background: url('../images/desktop/image-gallery-sugar-cubes.jpg') no-repeat center;
+      background-size: cover;
+    }
+  }
+}
+
